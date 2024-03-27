@@ -1,0 +1,16 @@
+[package]
+name = "jeff"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.81"
+chat-gpt-lib-rs = "0.3.4"
+chatgpt = "0.1.0"
+clap = { version = "4.5.4", features = ["derive"] }
+dirs = "5.0.1"
+openai_chatgpt_api = "0.1.2"
+regex = "1.10.4"
+tokio = "1.36.0"
