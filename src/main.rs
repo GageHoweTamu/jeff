@@ -1,36 +1,4 @@
-/*
-# jeff
-
-jeff is a command-line ai unlike any other. He's like your unstable uncle except he lives inside your computer and is a bash expert.
-
-``` bash
-jeff setup
-jeff "hi jeff"
-jeff "what directory am I in?"
-jeff "compile this pls" ~/Downloads/hi.cpp
-```
-
-jeff tries to run a command
-jeff corrects himself if he's wrong
-jeff outputs the command output
-jeff provides a summary of what happened
-jeff makes user happy
-
-```
-To install (this will happen with an install script in the future):
-cargo build --release
-mv target/release/jeff /usr/local/bin
-```
-
-Disclaimer: jeff is a work in progress. He's not perfect, but he's learning.
-Also, jeff isn't able to navigate your computer's file system yet. He's working on it.
-
-*/
 // https://platform.openai.com/account/billing/overview
-
-// before releasing:    - [ ] remove hardcoded api key
-//                      - [x] add install script
-//                      - [ ] add uninstall script
 
 use anyhow::Result;
 use chat_gpt_lib_rs::{ChatGPTClient, ChatInput, Message, Model, Role};
@@ -183,4 +151,3 @@ fn run_bash_command(command: &str) -> String {
         stderr
     }
 }
-// "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" // TODO: remove when open sourcing
