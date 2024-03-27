@@ -35,13 +35,14 @@ Also, jeff isn't able to navigate your computer's file system yet. He's working 
 use anyhow::Result;
 use chat_gpt_lib_rs::{ChatGPTClient, ChatInput, Message, Model, Role};
 use regex::Regex;
-// use std::env;
+use std::env;
 use std::error::Error;
 // use std::fs::File;
 use std::io::{stdin, stdout, Write};
 use std::path::PathBuf;
 // use std::process::{Command, Stdio};
 // use std::sync::Mutex;
+use std::io;
 
 static mut CURRENT_DIR: Option<PathBuf> = None;
 // static mut API_KEY: Option<String> = None;
@@ -51,18 +52,14 @@ static BASE_URL: &str = "https://api.openai.com";
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     let os = std::env::consts::OS;
-
-    let api_key = "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"; // hardcode for testing
-                                                                         /*
-                                                                         let api_key = env::var("API_KEY").unwrap_or_else(|_| {
-                                                                             println!("API_KEY not found. Please enter your API key:");
-                                                                             let mut api_key = String::new();
-                                                                             io::stdin()
-                                                                                 .read_line(&mut api_key)
-                                                                                 .expect("Failed to read line");
-                                                                             api_key.trim().to_string()
-                                                                         });
-                                                                         */
+    let api_key = env::var("API_KEY").unwrap_or_else(|_| {
+        println!("API_KEY not found. Please enter your API key:");
+        let mut api_key = String::new();
+        io::stdin()
+            .read_line(&mut api_key)
+            .expect("Failed to read line");
+        api_key.trim().to_string()
+    });
     {
         // save key in downloads folder; this doesn't work yet
         let mut path = if os == "windows" {
