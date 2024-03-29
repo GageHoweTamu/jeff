@@ -20,3 +20,9 @@ jeff uses the chatGPT api plus some pre-prompting trickery
 
 Disclaimer: jeff is a work in progress. He's not perfect, but he's learning.
 Also, jeff isn't able to navigate your computer's file system yet. He's working on it.
+
+
+To build and run:
+* Install Rust
+* Compile
+* Copy the binary to the bin folder (so you can access jeff from the terminal)
