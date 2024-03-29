@@ -1,6 +1,6 @@
 # jeff
 
-jeff is a command-line ai unlike any other. He's like your unstable uncle except he lives inside your computer and is a bash expert.
+jeff is a command-line ai for helping a user with programming, organization, installing dependencies, or similar tasks that require the use of commands.
 
 Example usage:
 
